@@ -8,4 +8,4 @@ Welcome to my movie review site! This site is built using HTML, CSS, and JavaScr
 - Responsive design.
 
 ## How to Use
-Visit the live site: [Movie Review Site](https://your-username.github.io/movie-review-site/)
+Visit the live site: [Movie Review Site](https://ishanibatlanki2004.github.io/movie-review-site/)
