@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Movie Reviews</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background: #0a0a23; /* Dark background for space theme */
+      color: #fff;
+    }
+
+    /* Welcome Page */
+    .welcome-page {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    .welcome-page h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #ffcc00; /* Gold color for cinematic feel */
+    }
+
+    .welcome-page p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    /* Starry Background */
+    .star-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      background: #fff;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    /* Mini Stars */
+    .mini-star {
+      width: 2px;
+      height: 2px;
+      animation: twinkle 1.5s infinite ease-in-out;
+    }
+
+    /* Moving Border Stars */
+    .border-star {
+      width: 3px;
+      height: 3px;
+      animation: moveStars 10s linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% {
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes moveStars {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+
+    /* Side Panel */
+    .side-panel {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      background: rgba(51, 51, 51, 0.8); /* Semi-transparent background */
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      z-index: 3;
+    }
+
+    .side-panel h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    .side-panel ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-panel ul li {
+      margin: 15px 0;
+    }
+
+    .side-panel ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .side-panel ul li a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <!-- Starry Background -->
+  <div class="star-background">
+    <!-- Mini Stars -->
+    <div class="star mini-star" style="top: 10%; left: 20%;"></div>
+    <div class="star mini-star" style="top: 30%; left: 50%;"></div>
+    <div class="star mini-star" style="top: 70%; left: 80%;"></div>
+    <div class="star mini-star" style="top: 50%; left: 10%;"></div>
+    <div class="star mini-star" style="top: 90%; left: 40%;"></div>
+
+    <!-- Moving Border Stars -->
+    <div class="star border-star" style="top: 0; left: 5%;"></div>
+    <div class="star border-star" style="top: 0; left: 95%;"></div>
+    <div class="star border-star" style="top: 50%; left: 0;"></div>
+    <div class="star border-star" style="top: 50%; left: 100%;"></div>
+  </div>
+
+  <!-- Welcome Page -->
+  <div class="welcome-page">
+    <h1>Welcome to Movie Reviews!</h1>
+    <p>
+      Dive into the world of cinema with our expert reviews, ratings, and recommendations. Whether you're a fan of blockbusters or indie films, we’ve got something for everyone. Lights, camera, action!
+    </p>
+  </div>
+
+  <!-- Side Panel -->
+  <div class="side-panel">
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="#">Latest Reviews</a></li>
+      <li><a href="#">Top Rated Movies</a></li>
+      <li><a href="#">Upcoming Releases</a></li>
+      <li><a href="#">Classic Cinema</a></li>
+    </ul>
+  </div>
+
+  <script>
+    // Generate random stars dynamically
+    const starBackground = document.querySelector('.star-background');
+    const starCount = 100; // Number of stars
+
+    for (let i = 0; i < starCount; i++) {
+      const star = document.createElement('div');
+      star.classList.add('star', 'mini-star');
+      star.style.top = `${Math.random() * 100}%`;
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.animationDelay = `${Math.random() * 2}s`; // Randomize twinkle delay
+      starBackground.appendChild(star);
+    }
+  </script>
+</body>
+</html>
