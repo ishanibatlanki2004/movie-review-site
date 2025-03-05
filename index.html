@@ -1,75 +1,316 @@
-<!-- Latest Reviews Section -->
-<section id="latest-reviews" class="reviews-section">
-  <h2>Latest Reviews</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Movie Reviews</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      background: #0a0a23; /* Dark background for cinematic feel */
+      color: #fff;
+    }
 
-  <!-- The Substance -->
-  <div class="review">
-    <div class="movie-poster">
-      <img src="https://via.placeholder.com/200x300?text=The+Substance+Poster" alt="The Substance Poster">
-    </div>
-    <div class="review-content">
-      <h3>The Substance</h3>
-      <p><strong>Rating:</strong> ★★★★☆ (4/5)</p>
-      <p>
-        "The Substance" is a gripping psychological thriller that keeps you on the edge of your seat...
-      </p>
-    </div>
+    /* Falling Popcorn Background */
+    .popcorn-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .popcorn {
+      position: absolute;
+      color: #ffcc00; /* Popcorn color */
+      font-size: 24px;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100%);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+
+    /* Welcome Page */
+    .welcome-page {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      z-index: 2;
+    }
+
+    .welcome-page h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      color: #ffcc00;
+    }
+
+    .welcome-page p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    /* Collapsible Side Panel */
+    .side-panel {
+      position: fixed;
+      top: 0;
+      left: -250px; /* Hide the panel by default */
+      width: 250px;
+      height: 100vh;
+      background: rgba(51, 51, 51, 0.9);
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+      z-index: 3;
+      transition: left 0.3s ease;
+    }
+
+    .side-panel.open {
+      left: 0; /* Show the panel when open */
+    }
+
+    .side-panel h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #ffcc00;
+    }
+
+    .side-panel ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .side-panel ul li {
+      margin: 15px 0;
+    }
+
+    .side-panel ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .side-panel ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Toggle Button */
+    .toggle-panel {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(51, 51, 51, 0.9);
+      color: #fff;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 4;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .toggle-panel:hover {
+      background: rgba(51, 51, 51, 1);
+    }
+
+    /* Reviews Section */
+    .reviews-section {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      margin: 20px;
+      border-radius: 10px;
+    }
+
+    .reviews-section h2 {
+      font-size: 2rem;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    .review {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    .movie-poster img {
+      width: 200px;
+      height: 300px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .review-content {
+      flex: 1;
+    }
+
+    .review-content h3 {
+      font-size: 1.8rem;
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .review-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .review-content strong {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <!-- Falling Popcorn Background -->
+  <div class="popcorn-background">
+    <!-- Popcorn elements will be added dynamically with JavaScript -->
   </div>
 
-  <!-- A Complete Unknown -->
-  <div class="review">
-    <div class="movie-poster">
-      <img src="https://via.placeholder.com/200x300?text=A+Complete+Unknown+Poster" alt="A Complete Unknown Poster">
-    </div>
-    <div class="review-content">
-      <h3>A Complete Unknown</h3>
-      <p><strong>Rating:</strong> ★★★☆☆ (3.5/5)</p>
-      <p>
-        "A Complete Unknown" is a thought-provoking drama that explores themes of identity...
-      </p>
-    </div>
+  <!-- Welcome Page -->
+  <div class="welcome-page">
+    <h1>Welcome to Movie Reviews!</h1>
+    <p>
+      Dive into the world of cinema with our expert reviews, ratings, and recommendations. Whether you're a fan of blockbusters or indie films, we’ve got something for everyone. Lights, camera, action!
+    </p>
   </div>
 
-  <!-- Anora -->
-  <div class="review">
-    <div class="movie-poster">
-      <img src="https://via.placeholder.com/200x300?text=Anora+Poster" alt="Anora Poster">
-    </div>
-    <div class="review-content">
-      <h3>Anora</h3>
-      <p><strong>Rating:</strong> ★★★★☆ (4/5)</p>
-      <p>
-        "Anora" is a visually stunning drama that explores the complexities of human relationships...
-      </p>
-    </div>
+  <!-- Toggle Button for Side Panel -->
+  <button class="toggle-panel" onclick="toggleSidePanel()">☰</button>
+
+  <!-- Side Panel -->
+  <div class="side-panel" id="sidePanel">
+    <h2>Categories</h2>
+    <ul>
+      <li><a href="#latest-reviews">Latest Reviews</a></li>
+      <li><a href="#">Top Rated Movies</a></li>
+      <li><a href="#">Upcoming Releases</a></li>
+      <li><a href="#">Classic Cinema</a></li>
+    </ul>
   </div>
 
-  <!-- Flow -->
-  <div class="review">
-    <div class="movie-poster">
-      <img src="https://via.placeholder.com/200x300?text=Flow+Poster" alt="Flow Poster">
-    </div>
-    <div class="review-content">
-      <h3>Flow</h3>
-      <p><strong>Rating:</strong> ★★★☆☆ (3.5/5)</p>
-      <p>
-        "Flow" is a captivating sci-fi thriller that keeps you guessing until the very end...
-      </p>
-    </div>
-  </div>
+  <!-- Latest Reviews Section -->
+  <section id="latest-reviews" class="reviews-section">
+    <h2>Latest Reviews</h2>
 
-  <!-- I’m Still Here -->
-  <div class="review">
-    <div class="movie-poster">
-      <img src="https://via.placeholder.com/200x300?text=I'm+Still+Here+Poster" alt="I’m Still Here Poster">
+    <!-- The Substance -->
+    <div class="review">
+      <div class="movie-poster">
+        <img src="https://via.placeholder.com/200x300?text=The+Substance+Poster" alt="The Substance Poster">
+      </div>
+      <div class="review-content">
+        <h3>The Substance</h3>
+        <p><strong>Rating:</strong> ★★★★☆ (4/5)</p>
+        <p>
+          "The Substance" is a gripping psychological thriller that keeps you on the edge of your seat. The performances are stellar, especially from the lead actor, who delivers a haunting portrayal of a man battling his inner demons. The cinematography is stunning, with dark, moody visuals that perfectly complement the film's tense atmosphere. A must-watch for fans of the genre!
+        </p>
+      </div>
     </div>
-    <div class="review-content">
-      <h3>I’m Still Here</h3>
-      <p><strong>Rating:</strong> ★★★★☆ (4.5/5)</p>
-      <p>
-        "I’m Still Here" is a powerful and emotional journey of resilience and self-discovery...
-      </p>
+
+    <!-- A Complete Unknown -->
+    <div class="review">
+      <div class="movie-poster">
+        <img src="https://via.placeholder.com/200x300?text=A+Complete+Unknown+Poster" alt="A Complete Unknown Poster">
+      </div>
+      <div class="review-content">
+        <h3>A Complete Unknown</h3>
+        <p><strong>Rating:</strong> ★★★☆☆ (3.5/5)</p>
+        <p>
+          "A Complete Unknown" is a thought-provoking drama that explores themes of identity and self-discovery. The film's narrative is intriguing, though it occasionally feels slow-paced. The standout element is the soundtrack, which features an eclectic mix of songs that enhance the emotional depth of the story. While not perfect, it's a film that stays with you long after the credits roll.
+        </p>
+      </div>
     </div>
-  </div>
-</section>
- 
+
+    <!-- Anora -->
+    <div class="review">
+      <div class="movie-poster">
+        <img src="https://via.placeholder.com/200x300?text=Anora+Poster" alt="Anora Poster">
+      </div>
+      <div class="review-content">
+        <h3>Anora</h3>
+        <p><strong>Rating:</strong> ★★★★☆ (4/5)</p>
+        <p>
+          "Anora" is a visually stunning drama that explores the complexities of human relationships. The film's narrative is both heartfelt and thought-provoking, with standout performances from the lead actors. The cinematography is breathtaking, capturing the raw emotions of the characters in every frame. A must-watch for fans of indie cinema!
+        </p>
+      </div>
+    </div>
+
+    <!-- Flow -->
+    <div class="review">
+      <div class="movie-poster">
+        <img src="https://via.placeholder.com/200x300?text=Flow+Poster" alt="Flow Poster">
+      </div>
+      <div class="review-content">
+        <h3>Flow</h3>
+        <p><strong>Rating:</strong> ★★★☆☆ (3.5/5)</p>
+        <p>
+          "Flow" is a captivating sci-fi thriller that keeps you guessing until the very end. The film's unique premise and innovative storytelling make it a standout in the genre. While the pacing can feel uneven at times, the stunning visuals and gripping climax more than make up for it. A solid choice for sci-fi enthusiasts!
+        </p>
+      </div>
+    </div>
+
+    <!-- I’m Still Here -->
+    <div class="review">
+      <div class="movie-poster">
+        <img src="https://via.placeholder.com/200x300?text=I'm+Still+Here+Poster" alt="I’m Still Here Poster">
+      </div>
+      <div class="review-content">
+        <h3>I’m Still Here</h3>
+        <p><strong>Rating:</strong> ★★★★☆ (4.5/5)</p>
+        <p>
+          "I’m Still Here" is a powerful and emotional journey of resilience and self-discovery. The film's raw and honest portrayal of its protagonist's struggles is both heartbreaking and inspiring. The performances are phenomenal, and the direction is masterful. This is a film that will stay with you long after the credits roll.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- JavaScript for Falling Popcorn and Collapsible Side Panel -->
+  <script>
+    // Falling Popcorn Animation
+    const popcornContainer = document.querySelector('.popcorn-background');
+    const popcornCount = 50; // Number of popcorn pieces
+
+    for (let i = 0; i < popcornCount; i++) {
+      const popcorn = document.createElement('div');
+      popcorn.classList.add('popcorn');
+      popcorn.innerHTML = '🍿'; // Popcorn emoji
+      popcorn.style.left = `${Math.random() * 100}%`;
+      popcorn.style.animationDuration = `${Math.random() * 5 + 5}s`; // Randomize falling speed
+      popcorn.style.animationDelay = `${Math.random() * 5}s`; // Randomize start time
+      popcornContainer.appendChild(popcorn);
+    }
+
+    // Collapsible Side Panel
+    function toggleSidePanel() {
+      const sidePanel = document.getElementById('sidePanel');
+      sidePanel.classList.toggle('open');
+    }
+
+    // Smooth Scrolling for Anchor Links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
